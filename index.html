@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webpage Design Competition</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
+  <body id="top">
+    <header>
+      <h1 id="header-top">Welcome</h1>
+
+      <nav>
+        <div class="nav-wrap">
+          <a href="index.html"><span>Home</span></a>
+          <a href="where.html"><span>Where?</span></a>
+          <a href="how.html"><span>How?</span></a>
+          <a href="contact.html"><span>Contact</span></a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="column-wrap">
+        <div class="box main-box" style="height: 300px">
+          <div class="box-inner">
+            <div class="box toggler frame">
+              <div class="screw"></div>
+              <div class="toggler-inner" data-toggle="top"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box main-box" style="width: 650px">
+        <div class="box-inner">
+          <div class="box frame">
+            <h1 class="mb-4">Webpage Design Competition for Jail Homepage</h1>
+            <p>
+              Create a webpage and upload it to your jail. The best design wins.
+              No guidelines, can be a project, a game, a portfolio, anything
+              goes. This is a good opportunity to add to your resume/portfolio
+              to showcase skills.
+            </p>
+
+            <h2>Eligibility</h2>
+            <ul>
+              <li>Must have a jail account.</li>
+            </ul>
+
+            <h2>Submission Guidelines</h2>
+            <p>Submit jail URL to TBD.</p>
+
+            <h2>Judging Criteria</h2>
+            <ul>
+              <li>
+                Design and Aesthetics: The visual appeal of the webpage,
+                including layout, color scheme, and graphic elements.
+              </li>
+              <li>Content</li>
+              <li>
+                Usability and Functionality: Navigation ease, loading times, and
+                responsiveness across different devices and browsers.
+              </li>
+              <li>
+                Creativity and Innovation: Originality of the design and
+                innovative use of technology.
+              </li>
+              <li>
+                Technical Implementation: The effectiveness of the underlying
+                code, use of web standards, and best practices.
+              </li>
+            </ul>
+
+            <h2>Prizes</h2>
+            <ul>
+              <li>First Place: $100 Gift Card</li>
+              <li>Second Place: $50 Gift Card</li>
+              <li>Third Place: $25 Gift Card</li>
+            </ul>
+
+            <h2>Deadlines</h2>
+            <p>
+              Submissions must be received by April 16th. Late submissions will
+              not be considered.
+            </p>
+            <p>
+              The winners will be announced one week after the Night of Review
+              April 16th, following thorough review and deliberation by our
+              judges, Mark and Jeff.
+            </p>
+            <a class="button" href="#">Top</a>
+            <a class="button alt" href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <div id="footer">
+      <footer>
+        <div class="footer-wrap">
+          <p>&copy; 2024 Pioneer Tech Innovators</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        function toggle() {
+          // Look for any element with the 'data-toggle' attribute
+          const elements = document.querySelectorAll("[data-toggle]");
+
+          elements.forEach((element) => {
+            element.addEventListener("click", (event) => {
+              event.preventDefault();
+
+              const targetID = element.getAttribute("data-toggle");
+              const targetElement = document.getElementById(targetID);
+
+              // Toggle the class 'toggled' on the targeted element
+              targetElement.classList.toggle("toggled");
+
+              // Toggle the class 'active' on the clicked element
+              element.classList.toggle("active");
+            });
+          });
+        }
+        toggle();
+      });
+    </script>
+  </body>
+</html>

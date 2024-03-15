@@ -96,7 +96,210 @@ h2 {
     7px 7px 0 rgba(0, 0, 0, 0.1), 9px 9px 0 rgba(0, 0, 0, 0.1);
   margin: 20px;
 }
+#box4 {
+  display: none;
+}
+#box5 {
+  display: none;
+}
+@media only screen and (max-width: 375px) {
+  body {
+    padding: 0;
+    background-size: contain;
+  }
+  #box1,
+  #box2,
+  #box3 {
+    display: none; /* Hide #box1 and #box2 on narrower screens */
+  }
+  #box4 {
+    width: 350px !important; /* Take full width of small screens, adjust padding/margins as necessary */
+    margin: 10px; /* Adjust as necessary for spacing */
+    display: block !important; /* Show #box4 on narrower screens */
+  }
+  #box5 {
+    width: 350px !important; /* Take full width of small screens, adjust padding/margins as necessary */
+    margin: 10px; /* Adjust as necessary for spacing */
+    display: block ;
+  }
 
+  .container,
+  .box,
+  .box-inner,
+  main,
+  #footer {
+    width: auto;
+    margin: 10px;
+    box-shadow: none;
+  }
+
+  .main-box,
+  .box.toggler,
+  .box.frame::before {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container,
+  .box,
+  .box-inner {
+    padding: 10px;
+  }
+
+  .box-inner::before,
+  nav {
+    font-size: smaller;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    width: 100%;
+    border-top: 2px solid;
+    margin-bottom: 20px;
+    border-bottom: 2px solid;
+    text-align: center;
+    background: var(--light);
+    position: sticky;
+    top: 0;
+    z-index: 9;
+  }
+
+  nav::before {
+    content: "";
+    box-shadow: 5px 5px 3px inset rgba(255, 255, 255, 0.65),
+      5px 10px 10px 5px inset var(--light), -6px -6px 1px inset var(--dark),
+      3px 3px 0 rgba(0, 0, 0, 0.1), 5px 5px 0 rgba(0, 0, 0, 0.1),
+      7px 7px 0 rgba(0, 0, 0, 0.1), 9px 9px 0 rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .nav-wrap {
+    display: flex;
+    width: calc(100% - 20px);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  nav a {
+    padding: 10px;
+    flex-grow: 1;
+    color: inherit;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    border-right: 2px solid;
+    transition: all 0.15s steps(2);
+  }
+
+  nav a:first-of-type {
+    border-left: 2px solid;
+  }
+
+  nav a:focus,
+  nav a:hover {
+    background: var(--light);
+    box-shadow: -2px -2px 2px 2px inset rgba(255, 255, 255, 0.5),
+      2px 2px 1px 2px inset var(--dark);
+  }
+
+  nav a:focus {
+    filter: brightness(0.9);
+  }
+
+  nav a span {
+    display: inline-block;
+    transition: inherit;
+  }
+
+  nav a:focus span,
+  nav a:hover span {
+    transform: translatey(3px);
+  }
+
+  #event-info-box {
+    width: 100%; /* Take full width of small screens, adjust padding/margins as necessary */
+    margin: 0 10px; /* Adjust as necessary for spacing */
+  }
+
+  #event-description {
+    /* Adjust font size or margins if needed */
+    font-size: smaller; /* Example to adjust text size for small screens */
+  }
+
+  #event-image {
+    width: 100%; /* Make image responsive to the width of its container */
+    max-width: 100%; /* Ensure it doesn't exceed the screen width */
+    height: auto; /* Keep aspect ratio */
+    margin: 0 auto; /* Center the image if necessary */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #event-info-box {
+    width: 100%;
+    margin: 0 10px;
+  }
+
+  #event-description {
+    font-size: smaller;
+  }
+
+  #event-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width: 768px) {
+    #event-info-box {
+      width: 100%;
+      margin: 0 10px;
+    }
+
+    #event-description {
+      font-size: smaller;
+    }
+
+    #event-image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    #box1,
+    #box2,
+    #box3 {
+      display: none;
+    }
+
+    #box4 {
+      width: 100%;
+      margin: 0 10px;
+      display: block !important;
+    }
+    #box5 {
+      width: 100%;
+      margin-right: 20px;
+      display: block !important;
+    }
+  }
+}
 /* ###############################body stuff */
 
 main {
@@ -416,101 +619,6 @@ h3 {
   box-shadow: 0.2em 0.2em 0.2em 0.1em inset rgba(0, 0, 0, 0.25);
 }
 
-.screw {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  width: 18px;
-  left: calc(50% - 9px);
-}
-
-.screw::after,
-.screw::before {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border: 2px solid;
-  border-radius: 100%;
-  background: linear-gradient(
-    160deg,
-    #d4d4d4 0%,
-    #825a48 35%,
-    #825a48 40%,
-    #251418 40%,
-    #251418 60%,
-    #825a48 60%,
-    #825a48 65%,
-    #d4d4d4 100%
-  );
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3),
-    3px 3px 3px inset rgba(255, 200, 200, 0.25),
-    -3px -3px 3px inset rgba(0, 0, 0, 0.25);
-}
-
-.screw::before {
-  content: "";
-  top: 18px;
-}
-
-.screw::after {
-  content: "";
-  bottom: 18px;
-  transform: rotate(85deg);
-  box-shadow: 3px -3px 3px rgba(0, 0, 0, 0.3),
-    3px -3px 3px inset rgba(255, 200, 200, 0.25),
-    -3px 3px 3px inset rgba(0, 0, 0, 0.25);
-}
-
-.screw.right {
-  left: unset;
-  right: 20px;
-}
-.screw.left {
-  left: 20px;
-}
-
-.hinge {
-  position: absolute;
-  top: 20px;
-  width: 16px;
-  height: calc(100% - 40px);
-  border-radius: 3px;
-  border: 2px solid;
-  background: linear-gradient(
-    0deg,
-    #a28b81 0%,
-    #825a48 40%,
-    #825a48 45%,
-    #251418 45%,
-    #251418 55%,
-    #825a48 55%,
-    #825a48 60%,
-    #a28b81 100%
-  );
-  background-size: 30px 30px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3),
-    3px 3px 3px inset rgba(255, 200, 200, 0.25),
-    -3px -3px 3px inset rgba(0, 0, 0, 0.25);
-}
-
-.hinge.left {
-  left: -8px;
-  box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.3),
-    3px 3px 3px inset rgba(255, 200, 200, 0.25),
-    -3px -3px 3px inset rgba(0, 0, 0, 0.25);
-}
-
-.hinge.right {
-  right: -8px;
-}
-
-.open-left {
-  position: relative;
-  transform: perspective(1000px) rotateY(0deg);
-  transform-origin: left center;
-  transition: transform 1s steps(10);
-}
-
 .open-left.toggled {
   transform: perspective(1000px) rotateY(-92deg);
 }
@@ -540,40 +648,4 @@ h3 {
 .column-wrap {
   margin: 0 auto;
   max-width: max-content;
-}
-
-.outlet {
-  border: 2px solid;
-  width: 60px;
-  height: 50px;
-  margin: 5px auto;
-  background: var(--light);
-  border-radius: 40% 40% 50% 50%;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25),
-    3px 3px 3px inset rgba(0, 0, 0, 0.15),
-    -3px -3px 3px inset rgba(255, 255, 255, 0.5);
-  position: relative;
-}
-
-.outlet::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 15px;
-  background: var(--body);
-  width: 6px;
-  height: 16px;
-  border-radius: 3px;
-  box-shadow: 19px 0;
-}
-
-.outlet::after {
-  content: "";
-  position: absolute;
-  left: 22.5px;
-  bottom: 7px;
-  width: 10px;
-  height: 10px;
-  background: var(--body);
-  border-radius: 90% 90% 3px 3px;
 }
